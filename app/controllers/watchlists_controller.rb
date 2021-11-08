@@ -3,9 +3,7 @@ class WatchlistsController < ApplicationController
 
   # GET /watchlists
   def index
-    @watchlists = Watchlist.all
-
-    render json: @watchlists
+    render json: get_watchlists
   end
 
   # GET /watchlists/1
@@ -20,14 +18,14 @@ class WatchlistsController < ApplicationController
     if @watchlist.save
       render json: @watchlist, status: :created, location: @watchlist
     else
-      render json: @watchlist.errors, status: :unprocessable_entity
+      render json: get_watchlists, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /watchlists/1
   def update
     if @watchlist.update(watchlist_params)
-      render json: @watchlist
+      render json: get_watchlist
     else
       render json: @watchlist.errors, status: :unprocessable_entity
     end
@@ -36,6 +34,7 @@ class WatchlistsController < ApplicationController
   # DELETE /watchlists/1
   def destroy
     @watchlist.destroy
+    render json: get_watchlists
   end
 
   private
