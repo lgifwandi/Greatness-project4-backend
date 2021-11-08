@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
     # @movies = Movie.all
 
     # render json: @movies
-    render json: { status: 200, message: "Noticeboard API" }
+    # render json: { status: 200, message: "Noticeboard API" }
   end
 
   # GET /movies/1
