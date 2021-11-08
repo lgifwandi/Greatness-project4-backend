@@ -84,3 +84,4 @@ production:
   database: Greatness_project4_backend_production
   username: Greatness_project4_backend
   password: <%= ENV["GREATNESS_PROJECT4_BACKEND_DATABASE_PASSWORD"] %>
+
