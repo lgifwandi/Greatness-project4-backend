@@ -3,10 +3,10 @@ class MoviesController < ApplicationController
 
   # GET /movies
   def index
-    # @movies = Movie.all
+    @movies = Movie.all
 
-    # render json: @movies
-    # render json: { status: 200, message: "Noticeboard API" }
+    render json: @movies
+
   end
 
   # GET /movies/1
