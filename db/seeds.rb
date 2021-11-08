@@ -106,6 +106,18 @@
     #     genre: 'omedy, Drama, Romance'
     # )
 
+    Watchlist.create(
+        completed: true,
+        to_watch: false,
+        movie_review: 'The Godfather is a film considered by most to be one of the greatest ever made. From The American Film Institute to as voted by users on the Internet Movie Database (IMDB) it is consider to be one of the best. As a film that ranks as high as other masterpieces including Citizen Kane, Pulp Fiction and 12 Angry Men, The Godfather is an exceptional piece of cinema excellence that is flawless and is simply the pinnacle crime drama',
+        movie_id: 106
+    )
 
+    Watchlist.create(
+        completed: false,
+        to_watch: true,
+        movie_review: '',
+        movie_id: 103,
+    )
 
 puts "Seeded database"
