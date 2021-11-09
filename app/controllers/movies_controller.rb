@@ -40,6 +40,10 @@ class MoviesController < ApplicationController
   end
 
   private
+      # so we can up our component state in react with a fresh array
+      def get_movies
+        Movie.order('id DESC')
+      end
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
       @movie = Movie.find(params[:id])
