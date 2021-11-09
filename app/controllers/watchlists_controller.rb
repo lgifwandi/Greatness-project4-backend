@@ -16,9 +16,9 @@ class WatchlistsController < ApplicationController
     @watchlist = Watchlist.new(watchlist_params)
 
     if @watchlist.save
-      render json: @watchlist, status: :created, location: @watchlist
+      render json: get_watchlists, status: :created, location: @watchlist
     else
-      render json: get_watchlists, status: :unprocessable_entity
+      render json: @watchlist.errors, status: :unprocessable_entity
     end
   end
 
