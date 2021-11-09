@@ -1,24 +1,32 @@
-# README
+# Movie Database - GA Project 4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Developers
+Jennifer Susan, Jesse Gonzalez, Lee Berny Gifwandi, Chris Briseño
 
-Things you may want to cover:
+## Technologies Used
 
-* Ruby version
+* Ruby on Rails
 
-* System dependencies
+* PostgreSQL
 
-* Configuration
+* Postman
 
-* Database creation
+* Heroku
 
-* Database initialization
+## App Description
+The movie database is a page where a user may log their films watched by including add, edit, and delete features. The user may log whether a film they've logged has been completed, add a film to their watchlist, or choose to add a review of their thoughts on the film.
 
-* How to run the test suite
+## Backend ERD
+![Backend ERD](https://i.imgur.com/lz8WDg6.jpg)
+Description: Above is an example of the ERD framework for the Movie Database.
 
-* Services (job queues, cache servers, search engines, etc.)
+![Application Data Flow](https://i.imgur.com/aUUKCmj.png)
+Description: A visual representation of the flow of data from the backend to the frontend.
 
-* Deployment instructions
+## Getting Started
+[Click here](https://www.google.com) to deploy the application.
 
-* ...
+## Future Enhancements
+* Including a 3rd party API.
+* Including a search bar so that the user may search for movies to add to their log.
+* Including User Authentication so that multiple users may use the page and create their own lists.
