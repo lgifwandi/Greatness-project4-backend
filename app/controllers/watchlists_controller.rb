@@ -3,9 +3,7 @@ class WatchlistsController < ApplicationController
 
   # GET /watchlists
   def index
-    @watchlists = Watchlist.all
-
-    render json: @watchlists
+    render json: get_watchlists
   end
 
   # GET /watchlists/1
@@ -18,7 +16,7 @@ class WatchlistsController < ApplicationController
     @watchlist = Watchlist.new(watchlist_params)
 
     if @watchlist.save
-      render json: @watchlist, status: :created, location: @watchlist
+      render json: get_watchlists, status: :created, location: @watchlist
     else
       render json: @watchlist.errors, status: :unprocessable_entity
     end
@@ -27,7 +25,7 @@ class WatchlistsController < ApplicationController
   # PATCH/PUT /watchlists/1
   def update
     if @watchlist.update(watchlist_params)
-      render json: @watchlist
+      render json: get_watchlist
     else
       render json: @watchlist.errors, status: :unprocessable_entity
     end
@@ -36,9 +34,15 @@ class WatchlistsController < ApplicationController
   # DELETE /watchlists/1
   def destroy
     @watchlist.destroy
+    render json: get_watchlists
   end
 
   private
+
+      # so we can up our component state in react with a fresh array
+      def get_watchlists
+        Watchlist.order('created_at DESC')
+      end
     # Use callbacks to share common setup or constraints between actions.
     def set_watchlist
       @watchlist = Watchlist.find(params[:id])
